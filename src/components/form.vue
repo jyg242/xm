@@ -20,6 +20,7 @@
 
 <script>
 import axios from 'axios'
+import config from '../config'
     export default {
         data() {
           return {
@@ -29,17 +30,17 @@ import axios from 'axios'
                 user: ''
             },
             rules2: {
-                
+
                         user:[{
                             required:true,message:'请输入真实姓名',trigger:'blur'
                         }],
                         phone:[
                                 { required: true, message: '请输入手机号', trigger: 'blur' },
                                 { pattern: /^1[34578]\d{9}$/, message: '目前只支持中国大陆的手机号码' }
-                        ],   
+                        ],
                         // qq: [
                         // { required: true, message: '请输入qq', trigger: 'blur' }],
-                
+
             }
         };
     },
@@ -47,8 +48,8 @@ import axios from 'axios'
       submitForm(formName) {
         this.$refs[formName].validate(async (valid) => {
           if (valid) {
-            
-            let {status,data:{code,message}} = await axios.post('http://127.0.0.1:3000/user/register',{
+
+            let {status,data:{code,message}} = await axios.post(`http://${config.API}:3000/user/register`,{
                 userName:this.ruleForm2.user,
                 phone:this.ruleForm2.phone,
                 // qq:this.ruleForm2.qq
