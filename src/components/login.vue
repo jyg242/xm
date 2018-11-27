@@ -18,6 +18,7 @@
 
 <script>
 import axios from 'axios'
+import config from '../config'
     export default {
         data() {
           return {
@@ -25,12 +26,12 @@ import axios from 'axios'
                 password: '',
                 user: ''
             }}},
-            
+
          methods: {
             submitForm(formName) {
                 this.$refs[formName].validate(async (valid) => {
                 if (valid) {
-                        let {status,data:{code,message}} = await axios.post('http://127.0.0.1:3000/user/theone',{
+                        let {status,data:{code,message}} = await axios.post(`http://${config.API}:3000/user/theone`,{
                             userName:this.ruleForm2.user,
                             password:this.ruleForm2.password,
                         })
@@ -46,7 +47,7 @@ import axios from 'axios'
                     this.$alert('无法提交,请填写正确信息')
                     return false;
                     }
-                })  
+                })
             },
             resetForm(){
                 this.$router.push('/')
@@ -68,10 +69,10 @@ import axios from 'axios'
         /* align-items: center; */
     }
     .el-form{
-        
+
         margin-top: 50px;
-        
-        
+
+
     }
     .el-form-item {
         margin-top: 50px;
