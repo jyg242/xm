@@ -17,7 +17,7 @@
       "host": ["47.98.168.57"],
       "port": "22",
       "ref": "origin/master",
-      "repo": "https://github.com/jyg242/job-01.git",
+      "repo": "https://github.com/jyg242/xm.git",
       "path": "/www/zf/pc",
       "ssh_options": "StrictHostKeyChecking=no",
       "pre-deploy": "git fetch --all",
