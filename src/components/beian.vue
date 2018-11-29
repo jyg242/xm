@@ -15,7 +15,7 @@
     div{
         /* margin-top: 1rem; */
         width: 100%;
-        height: 10rem;
+        height: 200px;;
         background-color: #252527;
         color: azure;
         display: flex;
@@ -24,6 +24,6 @@
         align-items: center;
     }
     p{
-        line-height: 4rem;
+        line-height: 50px;
     }
 </style>
